@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermPlanner.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                    <Label Text="WGU Term Planner" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                </Frame>
+            </StackLayout>
+            <ListView 
+                x:Name="termListView" 
+                RowHeight="100" 
+                SeparatorVisibility="None" 
+                ItemTapped="termListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <Grid Padding="10">
+                                <Frame BackgroundColor="#2196F3" CornerRadius="10" HasShadow="True">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Padding="5">
+                                        <Label Text="{Binding Name}" VerticalOptions="Center" TextColor="#FFFFFF" FontSize="28"/>
+                                        <Label Text="{Binding StartDate, StringFormat='{0:MMMM dd, yyyy}'}" VerticalOptions="Center" FontSize="18"/>
+                                        <Label Text="to" VerticalOptions="Center" FontSize="18"/>
+                                        <Label Text="{Binding EndDate, StringFormat='{0:MMMM dd, yyyy}'}" VerticalOptions="Center" FontSize="18"/>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Padding="50,0,50,10">
+                <Button Text="Add" x:Name="AddTerm" FontSize="35" Clicked="AddTerm_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
