@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermPlanner.View.TermEdit">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="0">
+                <Label Text="Term Edit" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+            </Frame>
+            <StackLayout Padding="15">
+                <Label Text="Name" FontSize="25"/>
+                <Entry x:Name="nameEntry"/>
+            </StackLayout>
+            <StackLayout Padding="15">
+                <Label Text="Start Date" FontSize="25"/>
+                <DatePicker x:Name="startDate"/>
+            </StackLayout>
+            <StackLayout Padding="15">
+                <Label Text="End Date" FontSize="25"/>
+                <DatePicker x:Name="endDate"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Button Text="Save" x:Name="SaveButton" Clicked="SaveButton_Clicked" HorizontalOptions="FillAndExpand" />
+                <Button Text="Cancel" x:Name="CancelButton" Clicked="CancelButton_Clicked" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
