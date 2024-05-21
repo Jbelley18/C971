@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermPlanner.View.CourseDetails">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="0">
+                <Label x:Name="header" HorizontalTextAlignment="Start" TextColor="White" FontSize="20"/>
+            </Frame>
+            <StackLayout Margin="10,0,10,0">
+                <StackLayout Padding="5">
+                <Label Text="Course Name" FontSize="19"/>
+                <Entry x:Name="nameEntry" Margin="20,0,20,0"/>
+                </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="Start Date" FontSize="19"/>
+                <DatePicker x:Name="startDate" Margin="20,0,290,0"/>
+            </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="End Date" FontSize="19"/>
+                <DatePicker x:Name="endDate" Margin="20,0,290,0"/>
+            </StackLayout>
+
+            <StackLayout Padding="5">
+                <Label Text="Instructor Name" FontSize="19"/>
+                <Entry x:Name="instructorName" Margin="20,0,20,0"/>
+            </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="Instructor Phone" FontSize="19"/>
+                <Entry x:Name="instructorPhone" Margin="20,0,20,0"/>
+            </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="Instructor Email" FontSize="19"/>
+                <Entry x:Name="instructorEmail" Margin="20,0,20,0"/>
+            </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="Notes (Optional)" FontSize="19"/>
+                <Editor x:Name="notes" Margin="20,0,20,0" AutoSize="TextChanges" MaxLength="500"/>
+            </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="20, 0, 150, 0">
+                <Button Text="Save Notes" x:Name="SaveNoteButton" Clicked="SaveNoteButton_Clicked" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Share Notes" x:Name="ShareButton" Clicked="ShareButton_Clicked" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="Status" FontSize="19"/>
+                <Picker x:Name="status">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Complete</x:String>
+                            <x:String>In-Progress</x:String>
+                            <x:String>Not Started</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            <StackLayout Padding="5" Orientation="Horizontal">
+                <Label Text="Notify when the course Starts/Ends" FontSize="19"/>
+                <Switch x:Name="notification" HorizontalOptions="End" IsToggled="True"/>
+            </StackLayout>
+            </StackLayout>
+                <Button Text="Assessments" x:Name="AssessmentButton" Clicked="AssessmentButton_Clicked" HorizontalOptions="FillAndExpand" Margin="50, 0, 50, 0"/>
+                <StackLayout Orientation="Horizontal" Padding="10">
+                    <Button Text="Save" x:Name="SaveButton" Clicked="Save_Clicked" HorizontalOptions="FillAndExpand" />
+                    <Button Text="Cancel" x:Name="CancelButton" Clicked="CancelButton_Clicked" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <Button Text="Delete" x:Name="DeleteButton" Clicked="DeleteButton_Clicked" HorizontalOptions="FillAndExpand" Margin="50, 0, 50, 0"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
